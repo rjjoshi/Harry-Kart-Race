@@ -1,0 +1,6 @@
+server:
+  port: 8080
+  
+xsd:
+  file:
+    path: .//src//main//resources//schema//input.xsd

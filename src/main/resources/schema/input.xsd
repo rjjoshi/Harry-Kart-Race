@@ -1,0 +1,40 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="harryKart" type="harryKart"/>
+    <xs:complexType name="participant">
+        <xs:sequence>
+            <xs:element type="xs:int" name="lane"/>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:int" name="baseSpeed"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="startList">
+        <xs:sequence>
+            <xs:element type="participant" name="participant" maxOccurs="unbounded" minOccurs="4"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="lane">
+        <xs:simpleContent>
+            <xs:extension base="xs:int">
+                <xs:attribute type="xs:int" name="number" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="loop">
+        <xs:sequence>
+            <xs:element type="lane" name="lane" maxOccurs="unbounded" minOccurs="4"/>
+        </xs:sequence>
+        <xs:attribute type="xs:int" name="number" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="powerUps">
+        <xs:sequence>
+            <xs:element type="loop" name="loop" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="harryKart">
+        <xs:sequence>
+            <xs:element type="xs:int" name="numberOfLoops"/>
+            <xs:element type="startList" name="startList"/>
+            <xs:element type="powerUps" name="powerUps"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

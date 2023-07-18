@@ -125,7 +125,7 @@ The application we provide has two rest endpoints accepting XML and returning JS
 When you are done, zip the project (without the target folder) and send it back to us. You can leave the .git folder if you want.
 
 # Harry-Kart-Race Implementation By Rohit
-The assignment has been implemented as a spring boot application(version used 2.0.2.RELEASE) with java and Maven.
+The assignment has been implemented as a spring boot application(version used 2.7.9.RELEASE) with java and Maven.
 
 **Test cases** can be found under src/test/java
 
